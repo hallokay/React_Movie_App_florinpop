@@ -1,40 +1,73 @@
 import React, { useEffect, useState } from 'react';
 import Movie from './conponents/Movie';
-// import './App.css';
 
 const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
-const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&page=1&query";
+const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 
 function App() {
+
 const [movies, setMovies] = useState([]);
+const [searchTerm, setSearchTerm] = useState('');
 
 useEffect(() => {
-  fetch(FEATURED_API)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      setMovies(data.results)
-    })
+  getMovies(FEATURED_API);
 
 }, []);
 
-  return (
-    <div className="movie_container">
-    {/* 무비스의 각각을 무비로 받아서 
-    무비 컴포넌트를 적용 */}
-    <header>
-      <input type="text" className="search" placeholder="Search..."/>
-    </header>
+const getMovies = (API) =>  {
+  fetch(API)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setMovies(data.results);
+    })
+};
 
-   { movies.map(movie => (
+
+const handleOnSubmit = (e) => {
+  e.preventDefault();
+
+  if(searchTerm) {
+    getMovies(SEARCH_API + searchTerm);
+    setSearchTerm('');
+  };
+ 
+
+  };
+
+const handleOnChange = (e) => {
+  setSearchTerm(e.target.value);
+
+};
+
+  return (
+    <>
+    <header>
+      <form onSubmit={handleOnSubmit} >
+
+        <input type="text" 
+                value={searchTerm}
+                className="search" 
+                placeholder="Search..."
+                onChange={handleOnChange}/>
+      </form>
+  </header>
+
+    
+    <div className="movie_container">
+  
+   { movies.map((movie) => (
 
      <Movie key={movie.id} {...movie}/>
     //  키를 꼭 줘야함 
     // {...date} 쓰면 데이터의 각각
    )) };
    </div>
+ 
+   </>
   );
-}
+
+   }
 
 export default App;
