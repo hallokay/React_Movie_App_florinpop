@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/React_Movie_App_florinpop/static/css/main.eb1f99ad.chunk.css",
+    "main.js": "/React_Movie_App_florinpop/static/js/main.5b0c79e2.chunk.js",
+    "main.js.map": "/React_Movie_App_florinpop/static/js/main.5b0c79e2.chunk.js.map",
+    "runtime-main.js": "/React_Movie_App_florinpop/static/js/runtime-main.7e815bd4.js",
+    "runtime-main.js.map": "/React_Movie_App_florinpop/static/js/runtime-main.7e815bd4.js.map",
+    "static/js/2.862626d0.chunk.js": "/React_Movie_App_florinpop/static/js/2.862626d0.chunk.js",
+    "static/js/2.862626d0.chunk.js.map": "/React_Movie_App_florinpop/static/js/2.862626d0.chunk.js.map",
+    "index.html": "/React_Movie_App_florinpop/index.html",
+    "static/css/main.eb1f99ad.chunk.css.map": "/React_Movie_App_florinpop/static/css/main.eb1f99ad.chunk.css.map",
+    "static/js/2.862626d0.chunk.js.LICENSE.txt": "/React_Movie_App_florinpop/static/js/2.862626d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e815bd4.js",
+    "static/js/2.862626d0.chunk.js",
+    "static/css/main.eb1f99ad.chunk.css",
+    "static/js/main.5b0c79e2.chunk.js"
+  ]
+}
